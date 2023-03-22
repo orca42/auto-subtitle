@@ -1,11 +1,11 @@
 from setuptools import setup, find_packages
 
 setup(
-    version="0.1",
-    name="auto_subtitle_plus",
+    version="1.0.1",
+    name="auto_subtitle",
     packages=find_packages(),
-    py_modules=["auto_subtitle_plus"],
-    author="Sectux - based on the work of Miguel Piedrafita and RapDoodle",
+    py_modules=["auto_subtitle"],
+    author="Tobias Weigel, based on the work of Sectux, Miguel Piedrafita and RapDoodle",
     install_requires=[
         'youtube-dl',
         'psutil',
