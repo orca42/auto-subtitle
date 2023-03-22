@@ -23,7 +23,7 @@ The latest Python version may not work, thus I link here to Python 3.10, which w
 
 Though this can be skipped, it is recommeded if you want to be able to use a graphics processor (GPU), which makes the program run much faster. However, currently, the software that is used to run the AI model (pytorch) is *not* supporting fast execution on macOS, so if you are on macOS, this is not for you. Also, you need a graphics processor from NVIDIA to work; AMD's Radeon brand processors are incompatible.
 
-Open your command promopt and type the following commands:
+Open your command prompt and type the following commands:
 
     pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu117
 
@@ -39,11 +39,11 @@ This will install both the whisper AI and a small tool around it to make working
 
 ## 4. Creating subtitles
 
-The AI model comes in several sizes, from `small` over `medium` to `large`. A larger size means a more capable model, doing less errors when understanding speech and, particularly, translating it to a different language at the same time. However, a larger model will also be slower as it requires more compute power, and it will consume more memory.
+The AI model comes in several sizes, from `small` over `medium` to `large`. A larger size means a more capable model, doing less errors when understanding speech and, particularly, translating it from a source language other than English at the same time. However, a larger model will also be slower to execute as it requires more compute power, and it will consume more memory.
 
 To not go into too much detail, there are two main options:
 
-Option A: If you have a dedicated graphics card in your computer, this will make things run much faster. You will, however, be limited by the memory of your graphics card; e.g., the `large` AI model requires about 10 GB of graphics memory, which only the latest, expensive cards have. The `medium` model requires about 5 GB, which may be in range.
+Option A: If you have a dedicated NVIDIA graphics card in your computer, this will make things run much faster. You will, however, be limited by the memory of your graphics card; e.g., the `large` AI model requires about 10 GB of graphics memory, which only the latest, expensive cards have. The `medium` model requires about 5 GB, which may be in range.
 
 Option B: If you either have no NVIDIA graphics card (e.g., run this on a laptop) or if you want to use the `large` AI model, you will use only your computer's main processor. This will be *much* slower but is guaranteed to work.
 
@@ -70,6 +70,8 @@ Alas, I could not find any other link like this, e.g., for the large model.
 
 If you download this manually, you have to put it in a special directory under your home folder: `/your/home/folder/.cache/whisper`.
 
+Once the model is downloaded, the program will do the actual translation. It will display the subtitles it translates as it goes through the video, so you'll also get a feeling for how long this will take.
+
 ### Option B: Using the large (best) model, but slower
 
 Same instructions as for option A, but use this as command (in the directory where your video is):
@@ -87,7 +89,7 @@ The large model is about 3 GB in size to download.
 
 ## Further remarks
 
-Since I did not write the whole script but slightly modified it from someone else's code, the auto_subtitle script has several additional options. E.g., it could also embed subtitles rather than creating a .srt file, and it could also just create subtiutles in the original language (`--task transcribe`)
+Since I did not write the whole progra, but slightly modified it from someone else's code, the auto_subtitle script has several additional options. E.g., it could also embed subtitles rather than creating a .srt file, and it could also just create subtitles in the original language (`--task transcribe`).
 
 # Possible errors
 
@@ -104,6 +106,6 @@ If you run into this, then your graphics card's memory is too small. Either use 
 If you encounter some strange error like **"FileNotFoundError: [WinError 2] The system cannot find the file specified"** - and you are pretty sure that you specified the video file correctly - look here:
 https://stackoverflow.com/questions/73845566/openai-whisper-filenotfounderror-winerror-2-the-system-cannot-find-the-file
 
-It doesn't look like this at first sight, but this error is related to `ffmpeg`.
+It doesn't look like it at first sight, but this error is related to `ffmpeg`.
 The program relies on the ffmpeg software library to extract the audio signal from the video file. I've had to fiddle a lot with this; look at the answers given at the link above, maybe that helps. 
-What helped me was to download `ffmpeg` manually (https://ffmpeg.org/download.html) and simply copy the `ffmpeg.exe` program to the same location I run the script from.
+What helped me was ultimately to download `ffmpeg` manually (https://ffmpeg.org/download.html) and simply copy the `ffmpeg.exe` program to the same location I run the script from.
