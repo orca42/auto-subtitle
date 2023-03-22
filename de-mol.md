@@ -25,7 +25,7 @@ Though this can be skipped, it is recommeded if you want to be able to use a gra
 
 Open your command promopt and type the following commands:
 
-    pip install install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu117
+    pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu117
 
 This may take a while as a lot of stuff has to be downloaded.
 
