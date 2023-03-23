@@ -1,30 +1,3 @@
-## Automatic subtitles for your videos
-
-    This repository uses `ffmpeg` and [OpenAI's Whisper](https://openai.com/blog/whisper) to automatically generate and overlay subtitles on any video.
-    Bigup to m1guelpf for releasing this tool
-    Kudos for all the improvements made by RapDoodle
-
-## Why forking it 
-
-    Because it needed some fixes, installer, dependencies.... and I wanted also to make it more flexible
-
-    The first iteration of this tool consistently failed generating spanish subtitles in movies that start with english songs,
-
-    even though all the movie is in spanish... this should ifx it by manually forcing the language in the parameters.
-
-## Advantages of this version (so far)
-
-    - Can force subtitles to be generated in spanish
-    - Updated dependencies
-    - Fix audio out of sync issue
-    - Wildcard support for filenames
-    - Convert audio to subtitles (output `.srt` files)
-    - Option to pick a language instead of using language auto detection
-    - Extract audio from videos in parallel
-    - Disable `condition_on_previous_text` by default to avoid stucking in failure loop (especially for videos with long intervals between talks), with option `--enhance-consistency` to enable it.
-    - Many more new command options
-
-
 ## Installation
 
 To get started, you'll need Python 3.7 or newer. Install the binary by running the following command:
@@ -235,6 +208,11 @@ Adding `--task translate` will translate the subtitles into English:
 Run the following to view all available options:
 
     auto_subtitle_plus.exe --help
+
+## History of fork / prior contributors
+
+The code was originally written by other people who deserve the credit - m1guelpf for releasing the original tool, RapDoodle and Sectumsempra82 for making improvements.
+
 
 ## License
 
