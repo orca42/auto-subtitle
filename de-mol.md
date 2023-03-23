@@ -53,7 +53,7 @@ If at some point you encounter program errors, see the last section further belo
 
 In your command prompt, navigate (using `cd`) to the directory where your input video file resides. You need the following command:
 
-    auto_subtitle --task translate --model large -o output\ --language dutch --srt_only True --cpu_only True your-video.mp4 
+    auto_subtitle --task translate --model medium -o output\ --language nl -s your-video.mp4 
 
 Replace `your-video.mp4` with whatever filename your video has. 
 The subtitle file (.srt) will be created in a new subdirectory `output`. 
@@ -76,13 +76,13 @@ Once the model is downloaded, the program will do the actual translation. It wil
 
 Same instructions as for option A, but use this as command (in the directory where your video is):
 
-    auto_subtitle --task translate --model large -o output\ --language dutch --srt_only True --cpu_only True your-video.mp4 
+    auto_subtitle --task translate --model large-v2 -o output\ --language nl -s --device cpu your-video.mp4 
 
 Again, replace the last part `your-video.mp4` with your actual video's file name.
 
 Details:
-* `cpu_only True` tells it to only use the main processor
-* `--model large` will tell it to use the large AI model. Replace this with `--model small` or `--model medium` to use the faster/simpler AI models.
+* `--device cpu` tells it to only use the main processor
+* `--model large-v2` will tell it to use the large AI model. Replace this with `--model small` or `--model medium` to use the faster/simpler AI models.
 
 Note:
 The large model is about 3 GB in size to download.
